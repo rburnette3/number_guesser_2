@@ -19,12 +19,12 @@
     <main>
 
       <form class="user-guess-form" action="index.html" method="post">
-      <input class="user-input" type="number" placeholder="Enter your guess" value="">
+      <input class="user-input" type="number" placeholder="Enter your guess" min="1" max="100" value="">
 
-      <button class="guess-button buttons" type="button" name="guess button">Guess</button>
+      <button class="guess-button buttons" type="button" name="guess button" disabled="true">Guess</button>
 
       <button class="clear-button
-      buttons" type="button" name="clear button">Clear</button>
+      buttons" type="button" name="clear button" disabled="true">Clear</button>
 
       </form>
 
@@ -33,10 +33,11 @@
     <section class="user-guess-number">?
     </section>
 
-    <p class="response"></p>
+    <p class="response guess-text">Too high/ too low</p>
 
-    <button class="reset-button" type="button" name="button">Reset</button>
+    <button class="reset-button" type="button" name="button" disabled="true">Reset</button>
 
   </main>
-
+  <script type="text/javascript" src="script.js">
+  </script>
 </body>
