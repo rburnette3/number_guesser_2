@@ -4,29 +4,26 @@ var userInput = document.querySelector('.user-input');
 var guessButton = document.getElementById('guess-button');
 var clearButton = document.getElementById('clear-button');
 var resetButton = document.getElementById('reset-button');
-var userGuessNumber = document.getElementById('user-guess-number')
-var responseGuessText = document.getElementById('response-guess-text')
-//event listeners//
-
+var submitButton = document.getElementById('submit-button');
+var userGuessNumber = document.getElementById('user-guess-number');
+var responseGuessText = document.getElementById('response-guess-text');
+var lowRangeNumber = document.getElementById('low-range-number');
+var highRangeNumber = document.getElementById('high-range-number');
 var buttons = document.querySelectorAll('button');
 
-userInput.addEventListener('input' , function() {
-  console.log(this.value);
 
-  // assign min and max
-})
+// userInput.addEventListener('input' , function() {
+//   console.log(this.value);
+// })
+//
+// function button() {
+//   for (var i = 0; i < buttons.length; i++) {
+//     buttons[i].disabled;
+//   }
+// }
 
-function button() {
-  for (var i = 0; i < buttons.length; i++) {
-    buttons[i].disabled;
-  }
-}
-
-
-
-window.addEventListener('load', function(){
+submitButton.addEventListener('click', function(){
   generateRandomNumber();
-  enableButton();
 })
 
 guessButton.addEventListener('click', function(){
@@ -35,25 +32,22 @@ guessButton.addEventListener('click', function(){
 
 userInput.addEventListener('input', function(){
   enableButton();
- })
+})
 
 clearButton.addEventListener('click', function(){
   clearInput();
 })
 
 resetButton.addEventListener('click', function(){
-  generateRandomNumber();
   reset();
-
 })
-
 
 //functions//
 
 function generateRandomNumber(min, max){
-  var min = 1;
-  var max = 100;
-  randomNum = Math.floor(Math.random() * (100 - 1)) + 1;
+  var lowNumber = parseInt(lowRangeNumber.value);
+  var highNumber = parseInt(highRangeNumber.value);
+  randomNum = Math.floor(Math.random() * (highNumber - lowNumber)) + lowNumber;
   console.log(randomNum)
 }
 
@@ -70,7 +64,7 @@ function evaluateGuess() {
     console.log('your guess is too low');
     responseGuessText.innerText = "TOO LOW"
   }else {
-    responseGuessText.innerText = "BOOM"
+    responseGuessText.innerText = "CONGRATULATIONS!! Your 
     console.log('boom')
   }
 }

@@ -7,7 +7,7 @@ body, html, section, main, div, aside {
   padding: 0;
 }
 
-body{
+body {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
@@ -25,9 +25,21 @@ font-family: 'Open Sans', sans-serif;
 font-weight: 300;
 margin: 0;
 line-height: 100px;
-
 }
 
+.range-heading {
+  color: #404041;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.range-input {
+  border: 2px solid #E6E7E8;
+  display: inline;
+  margin: 5px 15px;
+  padding: 15px;
+  width: 150px;
+  font: inherit;
+}
 
 span {
   color: #ED458B;
@@ -41,25 +53,29 @@ span {
   padding: 10px;
   font-size: 25px;
   font-family: inherit;
-  margin: 40px auto;
+  margin: 20px auto 40px;
   border: 2px solid #E6E7E8;
 }
 
 .buttons {
-width: 185px;
-height:40px;
-background-color: #929497;
-border: 0;
-border-radius: 20px;
-color: #FFFFFF;
-font-size: 25px;
-font-family: inherit;
-margin: 0 10px;
+  width: 185px;
+  height:40px;
+  background-color: #929497;
+  border: 0;
+  border-radius: 20px;
+  color: #FFFFFF;
+  font-size: 25px;
+  font-family: inherit;
+  margin: 0 10px;
 }
 
 .buttons:hover {
-background-color: #D0D2D3;
+background-color: #EB008B;
 color: #FFFFFF;
+}
+
+.submit-button {
+  margin-top: 20px;
 }
 
 .guess-button {
