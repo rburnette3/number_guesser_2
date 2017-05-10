@@ -32,6 +32,11 @@ line-height: 100px;
   font-family: 'Open Sans', sans-serif;
 }
 
+.range-update-container {
+  width: 600px;
+  margin:auto;
+}
+
 .range-input {
   border: 2px solid #E6E7E8;
   display: inline;
@@ -115,4 +120,12 @@ color: #FFFFFF;
 
 .reset-button:disabled {
   background: #D0D2D3;
+}
+
+.range-update-text {
+  color: #ED458B;
+  font-size: 40px;
+  font-weight: 700;
+  
+
 }
