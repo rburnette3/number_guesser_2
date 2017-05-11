@@ -1,4 +1,4 @@
-//global variables//
+///////////global variables///////////
 
 var userInput = document.querySelector('.user-input');
 var guessButton = document.getElementById('guess-button');
@@ -12,20 +12,17 @@ var highRangeNumber = document.getElementById('high-range-number');
 var buttons = document.querySelectorAll('button');
 var rangeChange = document.getElementById('range-update-text');
 var rangeInput = document.querySelectorAll('.range-input')
-  // var submitRangeButton = getElementById('submit-button');
 generateRandomNumber()
 updateRangeFields()
-//event listeners//
+
+
+///////////event listeners///////////
 
 function updateRangeFields() {
-for(var i = 0; i < rangeInput.length; i++) {
-rangeInput[i].addEventListener('change', function(){
+  for(var i = 0; i < rangeInput.length; i++) {
+    rangeInput[i].addEventListener('change', function(){
   generateRandomNumber()
 })}}
-
-submitButton.addEventListener('click', function() {
-  generateRandomNumber();
-})
 
 guessButton.addEventListener('click', function() {
   evaluateGuess();
@@ -44,7 +41,7 @@ resetButton.addEventListener('click', function() {
 })
 
 
-//functions//
+///////////functions///////////
 
 function generateRandomNumber(min, max) {
   var lowNumber = parseInt(lowRangeNumber.value);
@@ -55,36 +52,28 @@ function generateRandomNumber(min, max) {
 
 function enableButton() {
   if (userInput.value === ''){
-
     for (var i = 0; i < buttons.length; i++) {
       buttons[i].disabled = true;
     }
-  } else {
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].disabled = false;
-      }
+} else {
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].disabled = false;
     }
   }
-
-  // function enableRangeButton{
-  //
-  //   if (lowRangeNumber.value ==='' || highRangeNumber.value ==='')
-  //
-  // }
+}
 
 function evaluateGuess() {
   var userGuess = parseInt(userInput.value);
-    userGuessNumber.innerText = userGuess;
-  if (userGuess > highRangeNumber.value || userGuess <
-    lowRangeNumber.value) {
+  userGuessNumber.innerText = userGuess;
+  if (userGuess > highRangeNumber.value || userGuess < lowRangeNumber.value) {
     userGuessNumber.innerText = "Out of Range"
-} else if (userGuess === NaN) {
-    responseGuessText.innerText = "Not a Number!"
-} else if (userGuess > randomNum){
-    responseGuessText.innerText = "TOO HIGH"
-} else if (userGuess < randomNum){
-    responseGuessText.innerText = "TOO LOW"
-} else {
+  } else if (userGuess === NaN) {
+      responseGuessText.innerText = "Not a Number!"
+  } else if (userGuess > randomNum){
+      responseGuessText.innerText = "TOO HIGH"
+  } else if (userGuess < randomNum){
+      responseGuessText.innerText = "TOO LOW"
+  } else {
     updateRange();
     userGuessNumber.innerText = "BOOM";
     responseGuessText.innerText = ''
@@ -92,41 +81,28 @@ function evaluateGuess() {
   }
 }
 
-function updateRange(){
+function updateRange() {
   var changeLowNumber = parseInt(lowRangeNumber.value) - 10;
-  var changeHighNumber = parseInt(highRangeNumber.value) +10;
+  var changeHighNumber = parseInt(highRangeNumber.value) + 10;
   randomNum = Math.floor(Math.random() * (changeHighNumber - changeLowNumber)) + changeLowNumber;
   console.log(randomNum)
-  changeHighNumber.toString();
-  changeLowNumber.toString();
-  lowRangeNumber.value = changeLowNumber;
-  highRangeNumber.value = changeHighNumber;
+  lowRangeNumber.value = changeLowNumber.toString();
+  highRangeNumber.value = changeHighNumber.toString();
 }
 
-// function enableButton() {
-//   if (userInput.value === ''){
-//     for (var i = 0; i < buttons.length; i++) {
-//       buttons[i].disabled = true;
-//     }
-//   } else {
-//     for (var i = 0; i < buttons.length; i++) {
-//       buttons[i].disabled = false;
-//       }
-//     }
-//   }
+function clearInput() {
+  userInput.value = '';
+  userGuessNumber.innerText = '?';
+  rangeChange.innerText = '';
+}
 
-  function clearInput() {
-    userInput.value = '';
-    userGuessNumber.innerText = '?';
-  }
-
-  function reset() {
-    userInput.value = '';
-    userGuessNumber.innerText = '?';
-    guessButton.disabled = true;
-    clearButton.disabled = true;
-    resetButton.disabled = true;
-    rangeChange.innerText = '';
-    lowRangeNumber.value = "1";
-    highRangeNumber.value = "100";
-  }
+function reset() {
+  userInput.value = '';
+  userGuessNumber.innerText = '?';
+  guessButton.disabled = true;
+  clearButton.disabled = true;
+  resetButton.disabled = true;
+  rangeChange.innerText = '';
+  lowRangeNumber.value = "1";
+  highRangeNumber.value = "100";
+}

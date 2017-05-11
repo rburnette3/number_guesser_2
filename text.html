@@ -3,57 +3,46 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>number_guesser_2</title>
   <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="styles.css"></link>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
+<head>
 
 <body>
-
 
     <header>
       <h1><span>Number</span> Guesser</h1>
     </header>
 
     <main>
-
-      <div class="range-container">
-        <h2 class="range-heading">Enter Your Number Range between 1 and 100</h2>
-
-        <form class="" action="index.html" method="post">
-          <input placeholder="Low Number" class="range-input" id="low-range-number" type="text" name="min range input" value="1">
-          <input placeholder="High Number" class="range-input" id="high-range-number" type="text" name="max range input" value="100">
-        </form>
-          <button class="submit-button buttons" id="submit-button">Submit Range</button>
-      </div>
-
-      <form class="user-guess-form" id="user-guess-form" action="index.html" method="post">
-      <input class="user-input" id="user-input" type="number" placeholder="Enter your guess">
-
-      <button class="guess-button buttons" id="guess-button" type="button" name="guess button" disabled="true">Guess</button>
-
-      <button class="clear-button
-      buttons" id="clear-button" type="button" name="clear button" disabled="true">Clear</button>
-
+      <h2 class="range-heading">Enter a Number Range</h2>
+      <form class="range-input-field" action="index.html" method="post">
+        <input placeholder="Low Number" class="range-input" id="low-range-number" type="number" name="min range input" value="1">
+        <input placeholder="High Number" class="range-input" id="high-range-number" type="number" name="max range input" value="100">
       </form>
 
-    <p class="guess-text">Your last guess was</p>
+      <form class="user-guess-form" id="user-guess-form"     action="index.html" method="post">
+        <input class="user-input" id="user-input" type="number" placeholder="Enter your guess" min="1" max="100" value="">
+        <button class="guess-button buttons" id="guess-button" type="button" name="guess button" disabled="true">Guess</button>
+        <button class="clear-button
+        buttons" id="clear-button" type="button" name="clear button" disabled="true">Clear</button>
+      </form>
 
-    <section class="user-guess-number" id="user-guess-number">?
-    </section>
+      <p class="guess-text">Your last guess was</p>
+      <section class="user-guess-number" id="user-guess-number">?</section>
+      <p class="response-guess-text" id="response-guess-text"></p>
+      <button class="reset-button" id="reset-button" type="button" name="button" disabled="true">Reset</button>
 
-    <p class="response-guess-text" id="response-guess-text"></p>
+      <div class="range-update-container">
+        <p class="range-update-text" id="range-update-text"></p>
+      </div>
 
-    <button class="reset-button" id="reset-button" type="button" name="button">Reset</button>
-
-    <div class="range-update-container">
       <p class="range-update-text" id="range-update-text"></p>
-    </div>
 
-    <p class="range-update-text" id="range-update-text"></p>
+    </main>
 
-  </main>
   <script type="text/javascript" src="script.js">
   </script>
+
 </body>
