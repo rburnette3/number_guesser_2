@@ -11,9 +11,9 @@ var lowRangeNumber = document.getElementById('low-range-number');
 var highRangeNumber = document.getElementById('high-range-number');
 var buttons = document.querySelectorAll('button');
 var rangeChange = document.getElementById('range-update-text');
-var rangeInput = document.querySelectorAll('.range-input')
-generateRandomNumber()
-updateRangeFields()
+var rangeInput = document.querySelectorAll('.range-input');
+generateRandomNumber();
+updateRangeFields();
 
 
 ///////////event listeners///////////
@@ -77,7 +77,7 @@ function evaluateGuess() {
     updateRange();
     userGuessNumber.innerText = "BOOM";
     responseGuessText.innerText = ''
-    rangeChange.innerText = "Your Low Number Range has decreased by 10 and the High Number Range has increased by 10."
+    rangeChange.innerText = "Your Low Number Range has decreased by 10 and the High Number Range has increased by 10. Guess Again!"
   }
 }
 
